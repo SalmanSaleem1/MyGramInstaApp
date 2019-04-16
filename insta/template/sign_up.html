@@ -1,0 +1,31 @@
+{% extends 'layout.html'%}
+{% block content %}
+
+<div class="login-clean">
+    <form method="post" action="" autocomplete="off">
+        <fieldset>
+            {{ form.hidden_tag() }}
+            <legend>Register Form</legend>
+
+
+            <div class="illustration"><img src="{{ url_for('static', filename='image/logo.jpg')}}"></div>
+            <div class="form-group">
+                {{ form.username(class="form-control", placeholder='username')}}
+            </div>
+            <div class="form-group">
+                {{ form.email(class="form-control", placeholder='Email')}}
+            </div>
+            <div class="form-group">
+                {{ form.password(class="form-control", placeholder='Password')}}
+            </div>
+            <div class="form-group">
+                {{ form.confirm_password(class="form-control", placeholder='Confirm Password')}}
+            </div>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-primary btn-block")}}
+            </div>
+            <a href="{{ url_for('user.login')}}" class="forgot">Already got an account? Login here ...</a>
+        </fieldset>
+    </form>
+</div>
+{% endblock %}

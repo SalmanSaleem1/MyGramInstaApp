@@ -1,0 +1,24 @@
+{% extends 'layout.html'%}
+{% block content %}
+
+<div class="login-clean">
+    <form action="" method="post" autocomplete="off">
+        <fieldset>
+            {{ form.hidden_tag() }}
+            <legend>Login Form</legend>
+            <div class="form-group">
+                {{ form.email(class="form-control", placeholder='Email')}}
+            </div>
+            <div class="form-group">
+                {{ form.password(class="form-control", placeholder='Password')}}
+            </div>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-primary")}}
+                <br>
+                <a href="{{ url_for('user.sign_up')}}">Register</a>
+            </div>
+
+        </fieldset>
+    </form>
+</div>
+{% endblock %}
